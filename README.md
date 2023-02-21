@@ -9,6 +9,8 @@ npm install html-webpack-plugin html-loader --save-dev
 
 > Comando para instalar babel:
 npm install babel-loader  @babel/preset-env @babel/preset-react @babel/core --save-dev
+
+npm install css-loader mini-css-extract-plugin --save-dev
   ``` 
 
 # Getting Started with Create React App
