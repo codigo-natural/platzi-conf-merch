@@ -11,6 +11,10 @@ npm install html-webpack-plugin html-loader --save-dev
 npm install babel-loader  @babel/preset-env @babel/preset-react @babel/core --save-dev
 
 npm install css-loader mini-css-extract-plugin --save-dev
+
+npm install -g eslint
+
+npm install eslint @babel/eslint-parser eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react -D
   ``` 
 
 # Getting Started with Create React App

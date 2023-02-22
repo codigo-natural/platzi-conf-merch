@@ -1,57 +1,71 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  // Punto de entrada
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
   },
-  mode: 'development',
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx'],
   },
+
+  // Modulos que definen las reglas de optimización mediante loaders
   module: {
     rules: [
+      // Optimización de JavaScript
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
+      // Optimización de Html
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader",
+            loader: 'html-loader',
           },
         ],
       },
+      // Optimización CSS
       {
         test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader'
-        ]
-      }
+          'css-loader',
+        ],
+      },
     ],
   },
+
+  // Plugins para indicar las salidas
   plugins: [
+    // Html
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html",
+      template: './public/index.html',
+      filename: './index.html',
     }),
+
+    // Css
     new MiniCssExtractPlugin({
-      filename: 'assests/[name].css',
-    })
+      filename: 'assets/[name].css',
+    }),
   ],
+  // Servidor de salida de la App
   devServer: {
-    static: path.join(__dirname, "dist"),
+    static: path.join(__dirname, 'dist'),
     compress: true,
     port: 3005,
+    historyApiFallback: true,
+    open: true,
   },
 };
