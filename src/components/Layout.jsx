@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import '../styles/components/Layout.css'
+import '../styles/components/Layout.css';
 
 function Layout({ children }) {
   return (
-    <div className='Main'>
+    <div className="Main">
       <Header />
       {children}
       <Footer />

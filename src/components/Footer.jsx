@@ -1,13 +1,13 @@
-import React from 'react'
-import '../styles/components/Footer.css'
+import React from 'react';
+import '../styles/components/Footer.css';
 
 function Footer() {
   return (
-    <div className='Footer'>
+    <div className="Footer">
       <p className="Footer-title">Platzi Conf Merge</p>
       <p className="Footer-copy">Todos los Izquierdos Reservados</p>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

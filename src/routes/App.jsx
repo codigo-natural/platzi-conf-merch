@@ -6,12 +6,12 @@ import Information from '../containers/Information';
 import Payment from '../containers/Payment';
 import Success from '../containers/Success';
 import NotFound from '../containers/NotFound';
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 function App() {
   return (
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/checkout" element={<Checkout />} />
@@ -20,8 +20,8 @@ function App() {
           <Route path="/checkout/success" element={<Success />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 function Product({ product }) {
   return (
-    <div className='Products-item'>
+    <div className="Products-item">
       <img src={product.image} alt={product.title} />
       <div className="Product-item-info">
         <h2>
@@ -11,9 +11,9 @@ function Product({ product }) {
         </h2>
         <p>{product.description}</p>
       </div>
-      <button type='button'>Comprar</button>
+      <button type="button">Comprar</button>
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;
