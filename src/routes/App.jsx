@@ -8,7 +8,7 @@ import Success from '../containers/Success';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
 import AppContext from '../context/AppContext';
-import useInitialState from '../hooks/useInitialState'
+import useInitialState from '../hooks/useInitialState';
 
 function App() {
   const initialState = useInitialState();
