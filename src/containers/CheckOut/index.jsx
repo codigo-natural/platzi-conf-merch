@@ -1,21 +1,22 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import AppContext from '../../context/AppContext'
+import AppContext from '../../context/AppContext';
 import '../../styles/components/CheckOut.css';
 
 function Checkout() {
   const { state, removeFromCart } = useContext(AppContext);
   const { cart } = state;
 
-  const handleRemove = product => () => {
-    removeFromCart(product)
-  }
+  const handleRemove = (product) => () => {
+    removeFromCart(product);
+  };
 
   const handleSumTotal = () => {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price;
     const sum = cart.reduce(reducer, 0);
     return sum;
-  }
+  };
 
   return (
     <div className="Checkout">
@@ -40,9 +41,8 @@ function Checkout() {
             <button type="button">Continuar pedido</button>
           </Link>
         </div>
-      )
-      }
-    </div >
+      )}
+    </div>
   );
 }
 
