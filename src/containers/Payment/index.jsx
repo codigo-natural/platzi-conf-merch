@@ -25,14 +25,6 @@ function Payment() {
     shape: 'rect',
   }
 
-  // Calcular el total del carrito
-  const handleSumTotal = () => {
-    const reducer = (accumulator, currentValue) =>
-      accumulator + currentValue.price;
-    const sum = cart.reduce(reducer, 0);
-    return sum;
-  };
-
   const handlePaymentSuccess = (data) => {
     console.log(data);
     if (data.status === 'COMPLETED') {
@@ -46,12 +38,20 @@ function Payment() {
     }
   };
 
+  // Calcular el total del carrito
+  const handleSumTotal = () => {
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price;
+    const sum = cart.reduce(reducer, 0);
+    return sum;
+  };
+
   return (
     <div className="Payment">
       <div className="Payment-content">
         <h3>Resumen del Pedido:</h3>
         {cart.map((item) => (
-          <div className="Payment-item" key={item.title}>
+          <div className="Payment-item" key='item.title'>
             <div className="Payment-element">
               <h4>{item.title}</h4>
               <span>$ {item.price}</span>
